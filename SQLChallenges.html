@@ -1,0 +1,230 @@
+<head>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+/>
+</head>
+<body>
+<div style="padding-top: 1em; font-family: charter, Georgia, Cambria, 'Times New Roman', Times, serif;">
+    <div style="text-align: center">
+    <h1>
+    SQL Challenges
+    </h1>
+    <div style="margin-left: auto;margin-right: auto;max-width: 42rem;">
+        <h3>
+            <a href="Index.html">Back</a>
+</h3>
+</div>
+<hr/>
+<div style="margin-left: auto;margin-right: auto;max-width: 90rem;">
+    <div style="display: flex;flex-wrap: wrap;display: block;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h4>SQL Challenges</h4>
+                    A collection of challenges that can be found <a target="_blank"  href="https://advancedsqlpuzzles.com/advanced-sql-puzzles/">here</a>.
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Puzzle Ten</h2>
+                        <img style="max-width: 100%;" src="Images/SQLChallenges/Puzzle10.PNG" alt="Puzzle 10">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Solution</h2>
+                        <pre>
+                            <code class="language-sql">
+SELECT SUM(IntegerValue)/COUNT(IntegerValue) AS Mean FROM SampleData;
+SELECT TOP 1 IntegerValue,COUNT(IntegerValue) AS ModeCount 
+FROM SampleData GROUP BY IntegerValue ORDER BY ModeCount DESC;
+SELECT MAX(IntegerValue)-MIN(IntegerValue) AS RangeValue FROM SampleData;
+SELECT (SELECT TOP 1 IntegerValue 
+FROM(SELECT TOP 50 PERCENT IntegerValue 
+FROM SampleData ORDER BY IntegerValue DESC))
++ (SELECT TOP 1 IntegerValue FROM
+(SELECT TOP 50 PERCENT IntegerValue 
+FROM SampleData ORDER BY IntegerValue ASC)) AS Medium
+</code>
+                        </pre>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Puzzle Nine</h2>
+                        <img style="max-width: 100%;" src="Images/SQLChallenges/Puzzle9.PNG" alt="Puzzle 9">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Solution</h2>
+                        <pre>
+                            <code class="language-sql">
+WITH CTE AS
+(
+SELECT	a.EmployeeID AS EmployeeID, b.EmployeeID AS EmployeeID2
+, COUNT(*) LicenseCount
+FROM	Employees a INNER JOIN Employees b ON a.License = b.License
+WHERE	a.EmployeeID <> b.EmployeeID
+GROUP BY a.EmployeeID, b.EmployeeID
+)
+SELECT * FROM CTE WHERE LicenseCount>1
+</code>
+                        </pre>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Puzzle Eight</h2>
+                        <img style="max-width: 100%;" src="Images/SQLChallenges/Puzzle8.PNG" alt="Puzzle 8">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Solution</h2>
+                        <pre>
+                            <code class="language-sql">
+SELECT Workflow,SUM(Case1+Case2+Case3)
+FROM WorkflowCases
+GROUP BY Workflow                                                  
+    </code>
+                        </pre>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Puzzle Seven</h2>
+                        <img style="max-width: 100%;" src="Images/SQLChallenges/Puzzle7.PNG" alt="Puzzle 7">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Solution</h2>
+                        <pre>
+                            <code class="language-sql">
+SELECT CandidateID
+FROM Candidates
+WHERE Occupation IN (SELECT Requirement FROM Requirements)
+GROUP BY CandidateID
+HAVING COUNT(*) = (SELECT COUNT(Requirement) FROM Requirements)
+                                
+    </code>
+                        </pre>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Puzzle Six</h2>
+                        <img style="max-width: 100%;" src="Images/SQLChallenges/Puzzle6.PNG" alt="Puzzle 6">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Solution</h2>
+                        <pre>
+                            <code class="language-sql">
+SELECT Workflow
+FROM WorkflowSteps
+GROUP BY Workflow
+HAVING COUNT(*) <> COUNT(CompletionDate)
+    </code>
+                        </pre>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Puzzle Five</h2>
+                        <img style="max-width: 100%;" src="Images/SQLChallenges/Puzzle5.PNG" alt="Puzzle 5">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Solution</h2>
+                        <pre>
+                            <code class="language-sql">
+WITH CTE AS
+    (SELECT CustomerID
+    ,CASE WHEN TYPE='Cellular' THEN PhoneNumber ELSE NULL END AS Cellular
+    ,CASE WHEN TYPE='Work' THEN PhoneNumber ELSE NULL END AS Work
+    ,CASE WHEN TYPE='Home' THEN PhoneNumber ELSE NULL END AS Home
+    FROM PhoneDirectory
+    )
+SELECT CustomerID,MAX(Cellular),MAX(Work),MAX(Home) FROM CTE
+GROUP BY CustomerID
+    </code>
+                        </pre>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Puzzle Four</h2>
+                        <img style="max-width: 100%;" src="Images/SQLChallenges/Puzzle4.PNG" alt="Puzzle 4">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Solution</h2>
+                        <pre>
+                            <code class="language-sql">
+SELECT * 
+FROM Orders
+WHERE CustomerID IN (SELECT CustomerID FROM Orders WHERE DeliveryState='CA')
+AND DeliveryState='TX'
+    </code>
+                        </pre>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Puzzle Two</h2>
+                        <img style="max-width: 100%;" src="Images/SQLChallenges/Puzzle2.PNG" alt="Puzzle 2">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h2>Solution</h2>
+                        <pre>
+                            <code class="language-sql">
+WITH CTE AS(
+    SELECT EmployeeID,ManagerID,JobTitle,Salary,0 as level 
+    FROM Employees WHERE JobTitle='President'
+    UNION ALL
+    SELECT E.EmployeeID,E.ManagerID,E.JobTitle,E.Salary,Level+1 
+    FROM Employees E 
+    INNER JOIN CTE O ON O.EMPLOYEEID=E.ManagerID
+    )
+SELECT * FROM CTE
+    </code>
+                        </pre>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h2>Puzzle One</h2>
+                    <img style="max-width: 100%;" src="Images/SQLChallenges/Puzzle1.PNG" alt="Puzzle 1">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h2>Solution</h2>
+                    <pre>
+                        <code class="language-sql">
+SELECT Cart1.ITEM
+,Cart2.ITEM
+FROM Cart1
+FULL OUTER JOIN Cart2 ON Cart1.ITEM=Cart2.ITEM    
+</code>
+                    </pre>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+<style>
+    .Logo{
+        height: 60px;
+        width: 60px;
+    }
+    .LogoWide{
+        height: 60px;
+        width: 70px;
+    }
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
