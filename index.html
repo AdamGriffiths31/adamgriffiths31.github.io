@@ -1,3 +1,7 @@
+<html>
+    <head>
+        <title>Adam Griffiths</title>
+    </head>
 <div style="text-align: center;padding-top: 1em;">
     <h1>
         Software Developer
@@ -18,84 +22,128 @@
 <br/>
 
 <div style="margin-left: auto;margin-right: auto;max-width: 60rem;">
-<div style="display: flex;flex-wrap: wrap;display: block;text-align: center;">
+<div style="display: flex;flex-wrap: wrap;display: block;">
     <div class="container">
-        <div class="row" style="display: inline-block;">
-            <img style="height: 70px;width: 80px;" src="Images/CLogo.png" alt="C#">
-            <img style="height: 70px;width: 70px;" src="Images/SQLLogo.png" alt="SQL">
-            <img style="height: 70px;width: 70px;" src="Images/PythonLogo.png" alt="Python">
-        </div>
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <hr/>
-                <span>Articles</span>
-                <hr/>
-                <article>
-                    <header>
-                        <a href="GuardClause.html">Guard Clause</a>
-                    </header>
-                    <small>09/04/2021</small>
-                    <img style="height: 20px;" src="Images/CLogo.png" alt="C#">
-                    <section>
-                        A look at Guard Clauses and how they can be used.
-                    </section>
-                </article>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <hr/>
-                <span>Projects</span>
-                <hr/>
-                <article>
-                    <header>
-                        <a href="SQLChallenges.html">SQL Challenges</a>
-                    </header>
-                    <small>18/11/2021</small>                
-                    <img style="height: 20px;" src="Images/SQLLogo.png" alt="Python">
-                    <section>
-                        A collection of SQL Challenges.
-                    </section>
-                </article>
-                <article>
-                    <header>
-                        <a href="WeatherApp.html">Weather App</a>
-                    </header>
-                    <small>14/11/2021</small>                
-                    <img style="height: 20px;" src="Images/PythonLogo.png" alt="Python">
-                    <section>
-                        A simple Flask app that allows you to check the Weather in various cities.
-                    </section>
-                </article>
-            </div>
+            <h2>Projects</h2>
+            <ul class="features">
+                <li>
+                    <a href="">
+                    <article>
+                        <h4>
+                            Project Euler
+                        </h4>
+                        <img style="height: 20px;" src="Images/CLogo.png" alt="C#">
+                        <section>
+                            A series of challenging mathematical/computer programming problems.
+                        </section>
+                    </article>
+                </a>
+                </li>
+                <li>
+                <a href="SQLChallenges.html">
+                    <article>
+                        <h4>
+                            SQL Challenges
+                        </h4>
+                        <img style="height: 20px;" src="Images/SQLLogo.png" alt="Python">
+                        <section>
+                            A collection of SQL Challenges.
+                        </section>
+                    </article>
+                </a>
+                </li>
+                <li>
+                    <a href="WeatherApp.html">
+                    <article>
+                        <h4>
+                            Weather App
+                        </h4>
+                        <img style="height: 20px;" src="Images/PythonLogo.png" alt="Python">
+                        <section>
+                            A simple Flask app that allows you to check the Weather in various cities.
+                        </section>
+                    </article>
+                </a>
+                </li>
+            </ul>
+        </div>
+        <p style="padding-top: 20px;"></p>
+        <div class="row">
+                <h2>Articles</h2>
+                <ul class="features">
+                    <li>
+                        <a href="GuardClause.html">
+                        <article>
+                            <h4>
+                            Guard Clause
+                            </h4>
+                            <small>09/04/2021</small>
+                            <img style="height: 20px;" src="Images/CLogo.png" alt="C#">
+                            <section>
+                                A look at Guard Clauses and how they can be used.
+                            </section>
+                        </article>
+                    </a>
+                    </li>
+                </ul>
+
         </div>
     </div>
 
 
 </div>
 </div>
+</html>
 
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <style>
-    header{
-        font-size: 2rem;
-        color: darkblue;
-    }
-    /* article{
-        padding-top: 4rem;
-    } */
-    a:link {
-        text-decoration: none;
-        }
-
-a:visited {
+header{
+    font-size: 2rem;
+    color: white;
+}
+h1,h2,h4{
+    color: white;
+}
+a{
+    color: grey;
+}
+a:link {
     text-decoration: none;
     }
 
+a:visited {
+text-decoration: none;
+}
+
 a:hover {
-    text-decoration: underline;
-    }
+text-decoration: none;
+color: grey;
+}
 
 a:active {
-    text-decoration: underline;
-    }
+text-decoration: underline;
+}
+body{
+background-color: #232e37;
+color: grey;
+}
+article{
+    background-color: #1a1f22;
+    padding-bottom: 5px;
+}
+.features{
+    gap: 20px;
+    list-style-type: none;
+    display: grid;
+    text-align: center;
+
+}
+@media(min-width: 768px) {
+  .features {
+    grid-template-columns: 1fr 1fr;
+}
+}
 </style>
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
