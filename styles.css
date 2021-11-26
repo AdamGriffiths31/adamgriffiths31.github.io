@@ -1,0 +1,139 @@
+header {
+	font-size: 2rem;
+	color: white;
+}
+h1,
+h2,
+h4 {
+	color: white;
+}
+a {
+	color: grey;
+}
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: white !important;
+}
+
+a:active {
+	text-decoration: underline;
+}
+body {
+	background-color: #232e37;
+	color: grey;
+	font-family: "Poppins", sans-serif;
+	font-size: 1em;
+}
+article {
+	background-color: #1a1f22;
+	padding-bottom: 5px;
+	height: 95px;
+}
+.features,
+.technologies {
+	gap: 20px;
+	list-style-type: none;
+	display: grid;
+	text-align: center;
+}
+@media (min-width: 768px) {
+	.features {
+		grid-template-columns: 1fr 1fr;
+	}
+	.technologies {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+}
+.fancy-link {
+	background-image: linear-gradient(90deg, #0c2c33, #0597b8);
+	background-size: 0% 3px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	transition: background-size 500ms ease;
+}
+.fancy-link:hover {
+	background-size: 100% 2px;
+}
+.outline {
+	padding: 1.25em 2em;
+	outline: 3px solid white;
+	outline-offset: -10px;
+	color: white;
+	font-weight: var(--fw-bold);
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+h4 {
+	padding-top: 10px !important;
+}
+.projects {
+	max-width: 1200px;
+	display: flex;
+	padding-top: 40px;
+	padding-left: 40px;
+}
+.project_image {
+	max-width: 650px;
+	border-radius: 5px;
+	height: 250px;
+}
+.project_overview {
+	margin-right: 20px;
+	text-align: left;
+}
+.project_header {
+	font-weight: 800;
+}
+.project_button {
+	position: absolute;
+	cursor: pointer;
+	color: #fff;
+	outline: none;
+	border: none;
+	font-weight: 700;
+	border-radius: 0.2vw;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-right: 1rem;
+	padding-top: 1rem;
+	background-color: rgba(36, 28, 28, 0.5);
+	padding-bottom: 1rem;
+	font-size: 1rem;
+	margin-top: 1rem;
+}
+.demo {
+	margin-left: 7rem;
+}
+
+.project_button:hover {
+	color: #000;
+	background-color: #e6e6e6e6;
+	transition: 0.2s;
+}
+.title {
+	font-weight: 700;
+	font-size: 3rem;
+}
