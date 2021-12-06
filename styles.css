@@ -8,7 +8,7 @@ h4 {
 	color: white;
 }
 a {
-	color: grey;
+	color: white;
 }
 a:link {
 	text-decoration: none;
@@ -99,6 +99,7 @@ h4 {
 	max-width: 650px;
 	border-radius: 5px;
 	height: 250px;
+	min-width: 600px;
 }
 .project_overview {
 	margin-right: 20px;
