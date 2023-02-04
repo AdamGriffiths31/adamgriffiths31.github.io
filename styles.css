@@ -60,6 +60,7 @@ body {
 	width: 65%;
 	z-index: 1;
 	color: white;
+	user-select: none;
   }
   
   .modal-layout-projects {
@@ -90,6 +91,7 @@ body {
 	padding-bottom: 35px;
 	font-size: 40px;
 	font-weight: bold;
+	user-select: none;
   }
   
   .icons {
@@ -110,6 +112,7 @@ body {
   .title {
 	font-size: 20px;
 	font-weight: bold;
+	user-select: none;
   }
   .overview-padding {
 	padding-bottom: 25px;
