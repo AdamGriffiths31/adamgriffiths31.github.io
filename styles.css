@@ -102,12 +102,12 @@ body {
 	display: flex;
 	justify-content: space-between;
 	margin: auto;
-	width: 60px;
+	width: 90px;
 	padding-right: 25px;
   }
   
   .icon {
-	width: 50%;
+	width: 33%;
   }
   .title {
 	font-size: 20px;
@@ -133,7 +133,15 @@ body {
   .project:hover {
 	text-decoration: underline;
   }
+
+  .liveProject{
+	padding-bottom: 7px;
+  }
   
+  .demoLink{
+	font-size: 12px;
+	font-weight: bold;
+  }
   @keyframes borderRotate {
 	100% {
 	  --angle: 420deg;
