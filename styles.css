@@ -128,10 +128,25 @@ body {
   
   .project {
 	padding-bottom: 7px;
+	position: relative;
   }
   
-  .project:hover {
-	text-decoration: underline;
+  .projectUnderline{
+	position: relative;
+  }
+
+  .projectUnderline:before {
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	width: 0;
+	height: 1px;
+	background-color: var(--c1);
+	transition: width 0.5s ease-in-out;
+  }
+
+  .projectUnderline:hover:before {
+	width: 100%;
   }
 
   .liveProject{
@@ -188,3 +203,7 @@ body {
 	inherits: true;
   }
   
+  @keyframes expand {
+	from { width: 0; }
+	to { width: 100%; }
+  }
