@@ -3,16 +3,6 @@ body {
 	font-family: Montserrat;
 }
 
-.header-nav{
-	display: flex;
-	justify-content: right;
-	padding-right: 40px;
-}
-
-.icon {
-	padding-right: 10px;
-}
-
 a:link {
 	text-decoration: none;
 	color: unset;
@@ -22,68 +12,27 @@ a:visited {
 	color: inherit;
 }
 
-.gallery {
-	padding-left: 80px;
-	padding-right: 80px;
-	padding-bottom: 50px;
+.header-nav{
+    display: flex;
+    justify-content: right;
+    padding-right: 40px;
 }
 
-.gallery-items {
-	display: flex;
-	justify-content: center;
+.icon {
+    padding-right: 10px;
 }
 
-.gallery-header {
-	margin-bottom: 5px;
-	font-size: x-large;
-	font-weight: bold;
-	color: dfe0e2;
+a:link {
+    text-decoration: none;
+    color: unset;
 }
 
-.gallery-item {
-	width: 33%;
-	height: 15em;
-	background-color: aaaaaa;
-	margin: 4px;
+a:visited {
+    color: inherit;
 }
 
-.gallery-title {
-	text-align-last: center;
-	font-size: larger;
-	font-weight: bold;
-}
-
-.gallery-icon {
-	text-align: center;
-}
-
-.gallery-description{
-	text-align: center;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-.articles{
-	padding-left: 30%;
-	padding-right: 30%;
-}
-.articles-item{
-	display: flex;
-    align-items: center;
-    justify-content: space-between;
-	padding-bottom: 30px;
-}
-
-.articles-image{
-	width: 5em;
-}
-
-.articles-title{
-	color: dfe0e2;
-	font-size: large;
-	font-weight: bold;
-}
-
-.articles-meta{
-	font-size: small;
+.link{
+    padding-right: 30px;
+    line-height: 25px;
+    color: dfe0e2 !important;
 }

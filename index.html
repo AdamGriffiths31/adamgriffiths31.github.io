@@ -1,16 +1,22 @@
 <html lang="en">
 
 <head>
-  <link href="styles.css" rel="stylesheet">
   <title>Adam Griffiths</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="app.js" defer type="module"></script>
+  <script src="components/project-gallery-component.js"></script>
+  <script src="components/articles-gallery-component.js"></script>
+  <script src="components/homepage-component.js"></script>
+  <script src="components/article-review-component.js"></script>
+  <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
     <div class="header-wrapper">
       <nav class="header-nav">
+        <a class="link" href="/">Home</a>
         <a target="_blank" href="https://github.com/AdamGriffiths31/">
           <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github"
@@ -23,99 +29,42 @@
         </a>
         <a target="_blank" href="https://www.linkedin.com/in/adam-griffiths-7b157a22a/">
           <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="black" height="25" width="25" version="1.1" id="Capa_1" viewBox="0 0 45.959 45.959" xml:space="preserve">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="black" height="25"
+              width="25" version="1.1" id="Capa_1" viewBox="0 0 45.959 45.959" xml:space="preserve">
               <g>
                 <g>
-                  <path d="M5.392,0.492C2.268,0.492,0,2.647,0,5.614c0,2.966,2.223,5.119,5.284,5.119c1.588,0,2.956-0.515,3.957-1.489    c0.96-0.935,1.489-2.224,1.488-3.653C10.659,2.589,8.464,0.492,5.392,0.492z M7.847,7.811C7.227,8.414,6.34,8.733,5.284,8.733    C3.351,8.733,2,7.451,2,5.614c0-1.867,1.363-3.122,3.392-3.122c1.983,0,3.293,1.235,3.338,3.123    C8.729,6.477,8.416,7.256,7.847,7.811z"/>
-                  <path d="M0.959,45.467h8.988V12.422H0.959V45.467z M2.959,14.422h4.988v29.044H2.959V14.422z"/>
-                  <path d="M33.648,12.422c-4.168,0-6.72,1.439-8.198,2.792l-0.281-2.792H15v33.044h9.959V28.099c0-0.748,0.303-2.301,0.493-2.711    c1.203-2.591,2.826-2.591,5.284-2.591c2.831,0,5.223,2.655,5.223,5.797v16.874h10v-18.67    C45.959,16.92,39.577,12.422,33.648,12.422z M43.959,43.467h-6V28.593c0-4.227-3.308-7.797-7.223-7.797    c-2.512,0-5.358,0-7.099,3.75c-0.359,0.775-0.679,2.632-0.679,3.553v15.368H17V14.422h6.36l0.408,4.044h1.639l0.293-0.473    c0.667-1.074,2.776-3.572,7.948-3.572c4.966,0,10.311,3.872,10.311,12.374V43.467z"/>
+                  <path
+                    d="M5.392,0.492C2.268,0.492,0,2.647,0,5.614c0,2.966,2.223,5.119,5.284,5.119c1.588,0,2.956-0.515,3.957-1.489    c0.96-0.935,1.489-2.224,1.488-3.653C10.659,2.589,8.464,0.492,5.392,0.492z M7.847,7.811C7.227,8.414,6.34,8.733,5.284,8.733    C3.351,8.733,2,7.451,2,5.614c0-1.867,1.363-3.122,3.392-3.122c1.983,0,3.293,1.235,3.338,3.123    C8.729,6.477,8.416,7.256,7.847,7.811z" />
+                  <path d="M0.959,45.467h8.988V12.422H0.959V45.467z M2.959,14.422h4.988v29.044H2.959V14.422z" />
+                  <path
+                    d="M33.648,12.422c-4.168,0-6.72,1.439-8.198,2.792l-0.281-2.792H15v33.044h9.959V28.099c0-0.748,0.303-2.301,0.493-2.711    c1.203-2.591,2.826-2.591,5.284-2.591c2.831,0,5.223,2.655,5.223,5.797v16.874h10v-18.67    C45.959,16.92,39.577,12.422,33.648,12.422z M43.959,43.467h-6V28.593c0-4.227-3.308-7.797-7.223-7.797    c-2.512,0-5.358,0-7.099,3.75c-0.359,0.775-0.679,2.632-0.679,3.553v15.368H17V14.422h6.36l0.408,4.044h1.639l0.293-0.473    c0.667-1.074,2.776-3.572,7.948-3.572c4.966,0,10.311,3.872,10.311,12.374V43.467z" />
                 </g>
               </g>
-              </svg>
+            </svg>
           </div>
         </a>
+      </nav>
     </div>
   </header>
-  <div class="main-container">
-    <div class="main-wrapper">
-      <div class="gallery">
-        <div class="gallery-header">Projects</div>
-        <div class="gallery-items">
-          <div class="gallery-item">
-            <p class="gallery-title">Chess Engine</p>
-            <a target="_blank" href="https://github.com/AdamGriffiths31/">
-              <div class="gallery-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
-                  </path>
-                </svg>
-              </div>
-            </a>
-            <p class="gallery-description">A comprehensive Chess engine written in Go that includes alpha beta
-              evaluation and LazySMP</p>
-          </div>
-          <div class="gallery-item">
-            <p class="gallery-title">Interpreter & Compiler</p>
-            <a target="_blank" href="https://github.com/AdamGriffiths31/">
-              <div class="gallery-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
-                  </path>
-                </svg>
-              </div>
-            </a>
-            <p class="gallery-description">This project is a personal implementation of the code examples found in the
-              book "Writing An Interpreter In Go" and "Writing A Compiler In Go" by Thorsten Ball</p>
-          </div>
-          <div class="gallery-item">
-            <p class="gallery-title">Leetcode</p>
-            <a target="_blank" href="https://github.com/AdamGriffiths31/">
-              <div class="gallery-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
-                  </path>
-                </svg>
-              </div>
-            </a>
-            <p class="gallery-description">A collection of programming challenges in a variety of languages</p>
-          </div>
-        </div>
-      </div>
-      <div class="articles">
-        <div class="articles-item">
-          <div class="articles-data">
-            <span class="articles-title">Refactoring</span>
-            <p class="articles-description">Refactoring improves the design of existing code and enhances software maintainability, as well as making existing code easier to understand</p>
-            <span class="articles-meta">20/02/24</span>
-          </div>
-          <img class="articles-image" src="Images/Refactoring.jpg" alt="Designing Data-Intensive Applications">
-        </div>
-        <hr>
-        <div class="articles-item">
-          <div class="articles-data">
-            <span class="articles-title">Clean Code</span>
-            <p class="articles-description">The disciplines, techniques, tools, and practices of true software craftsmanship</p>
-            <span class="articles-meta">20/10/24</span>
-          </div>
-          <img class="articles-image" src="Images/CC.jpeg" alt="Clean Code">
-        </div>
-        <hr>
-        <div class="articles-item">
-          <div class="articles-data">
-            <span class="articles-title">Designing Data-Intensive Applications</span>
-            <p class="articles-description">Comprehensive book on best practices for building a data driven application</p>
-            <span class="articles-meta">20/02/24</span>
-          </div>
-          <img class="articles-image" src="Images/DDIA.png" alt="Designing Data-Intensive Applications">
-        </div>
+
+  <template id="article-review-template">
+    <div class="article">
+      <div class="article-body">
+        <p class="title"></p>
+        <span class="author"></span>
+        <p class="description"></p>
       </div>
     </div>
+  </template>
+
+  <main>
+    <div class="main-container">
+      <div class="main-wrapper">
+        <homepage-component></homepage-component>
+      </div>
+    </div>
+  </main>
+
 </body>
 
 </html>

@@ -1,0 +1,28 @@
+.article {
+    display: flex;
+    justify-content: center;
+}
+
+.article-body {
+    display: flex;
+    flex-direction: column;
+    max-width: 750px;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #dfe0e2;
+    padding-bottom: 20px;
+}
+
+.author{
+    font-size: 10px;
+    color: #dfe0e2;
+    padding-bottom: 5px;
+}
+
+.description {
+    font-size: 15px;
+    color: #dfe0e2;
+}
