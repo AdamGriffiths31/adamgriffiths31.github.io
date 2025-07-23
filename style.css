@@ -8,7 +8,7 @@
   --bg-primary: #0a0a0a;
   --bg-secondary: #141414;
   --bg-tertiary: #1a1a1a;
-  --accent-primary: #0ea5e9;
+  --accent-primary: #0369a1;
   --accent-secondary: #06b6d4;
   --text-primary: #ffffff;
   --text-secondary: #a3a3a3;
@@ -138,6 +138,10 @@ nav {
   font-size: 0.875rem;
   color: var(--text-secondary);
   transition: all 0.2s;
+}
+
+section h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
 .tech-badge:hover {
