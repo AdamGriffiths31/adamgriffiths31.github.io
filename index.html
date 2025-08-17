@@ -15,65 +15,72 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-container">
-        <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#projects">Projects</a>
-          <a href="mailto:adam.j.griffiths@outlook.com">Contact</a>
-          <a
-            href="https://www.linkedin.com/in/adam-griffiths-7b157a22a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          >
+    <!-- Header with Navigation -->
+    <header>
+      <nav aria-label="Main navigation">
+        <div class="nav-container">
+          <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-links" role="list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="mailto:adam.j.griffiths@outlook.com">Contact</a></li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/adam-griffiths-7b157a22a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <h1>Adam Griffiths</h1>
-        <p class="hero-subtitle">Software Developer · Manchester, UK</p>
-        <div class="tech-stack">
-          <span class="tech-badge">Golang</span>
-          <span class="tech-badge">C#</span>
-          <span class="tech-badge">TypeScript</span>
-          <span class="tech-badge">React</span>
-          <span class="tech-badge">GKE</span>
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h1 id="hero-title">Adam Griffiths</h1>
+          <p class="hero-subtitle">Software Developer · Manchester, UK</p>
+          <div class="tech-stack" role="list" aria-label="Technology Stack">
+            <span class="tech-badge" role="listitem">Golang</span>
+            <span class="tech-badge" role="listitem">C#</span>
+            <span class="tech-badge" role="listitem">TypeScript</span>
+            <span class="tech-badge" role="listitem">React</span>
+            <span class="tech-badge" role="listitem">GKE</span>
+          </div>
+          <a href="#projects" class="cta-button" aria-label="View my projects">View My Work</a>
         </div>
-        <a href="#projects" class="cta-button">View My Work</a>
-      </div>
-    </section>
+      </section>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
+      <!-- Projects Section -->
+      <section class="projects" id="projects" aria-labelledby="projects-heading">
       <div class="section-header">
-        <h2>Featured Projects</h2>
+        <h2 id="projects-heading">Featured Projects</h2>
         <p>Building fast, scalable, and challenging applications</p>
       </div>
 
       <!-- Filter Tabs -->
-      <div class="filter-tabs">
-        <div class="filter-tab active">All</div>
-        <div class="filter-tab">Backend</div>
-        <div class="filter-tab">Frontend</div>
-        <div class="filter-tab">Full Stack</div>
-        <div class="filter-tab">Algorithms</div>
-      </div>
+      <nav class="filter-tabs" role="tablist" aria-label="Project categories">
+        <button class="filter-tab active" role="tab" aria-selected="true" aria-controls="project-list">All</button>
+        <button class="filter-tab" role="tab" aria-selected="false" aria-controls="project-list">Backend</button>
+        <button class="filter-tab" role="tab" aria-selected="false" aria-controls="project-list">Frontend</button>
+        <button class="filter-tab" role="tab" aria-selected="false" aria-controls="project-list">Full Stack</button>
+        <button class="filter-tab" role="tab" aria-selected="false" aria-controls="project-list">Algorithms</button>
+      </nav>
 
       <!-- Bento Grid for Featured Projects -->
-      <div class="bento-grid">
+      <div class="bento-grid" id="project-list" role="tabpanel">
         <!-- Medium Project - Chess Engine -->
-        <div class="project-card large">
+        <article class="project-card large">
           <h3 class="project-title">Chess Engine</h3>
           <p class="project-description">
             Chess engine with minimax algorithm, alpha-beta pruning, and
@@ -101,10 +108,10 @@
               View Code
             </a>
           </div>
-        </div>
+        </article>
 
         <!-- Medium Project - Survival2D -->
-        <div class="project-card large">
+        <article class="project-card large">
           <h3 class="project-title">Survival2D</h3>
           <p class="project-description">
             A 2D survival game built using the Godot Engine, focused on
@@ -133,11 +140,11 @@
               View Code
             </a>
           </div>
-        </div>
+        </article>
 
         <!-- Small Project -->
         <!-- Small Project - Leetcode Solutions -->
-        <div class="project-card">
+        <article class="project-card">
           <h3 class="project-title">Leetcode Solutions</h3>
           <p class="project-description">
             Optimized solutions to challenging algorithmic problems with
@@ -164,10 +171,10 @@
               View Code
             </a>
           </div>
-        </div>
+        </article>
 
         <!-- Small Project - Pulse Board -->
-        <div class="project-card">
+        <article class="project-card">
           <h3 class="project-title">Pulse Board</h3>
           <p class="project-description">
             Pulseboard is a full-stack application designed to monitor and
@@ -194,10 +201,10 @@
               View Code
             </a>
           </div>
-        </div>
+        </article>
 
         <!-- Small Project - Interpreter & Compiler -->
-        <div class="project-card">
+        <article class="project-card">
           <h3 class="project-title">Interpreter & Compiler</h3>
           <p class="project-description">
             This project is a personal implementation of the code examples found
@@ -225,10 +232,10 @@
               View Code
             </a>
           </div>
-        </div>
+        </article>
 
         <!-- Small Project - Advent Of Code -->
-        <div class="project-card">
+        <article class="project-card">
           <h3 class="project-title">Advent Of Code</h3>
           <p class="project-description">
             The Advent of Code is an annual event where participants solve
@@ -256,10 +263,10 @@
               View Code
             </a>
           </div>
-        </div>
+        </article>
 
         <!-- Small Project - Netflix Clone -->
-        <div class="project-card">
+        <article class="project-card">
           <h3 class="project-title">Netflix Clone</h3>
           <p class="project-description">
             Full-featured Netflix clone with authentication, video streaming,
@@ -286,9 +293,9 @@
               View Code
             </a>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card">
+        <article class="project-card">
           <h3 class="project-title">Distributed Cache</h3>
           <p class="project-description">
             High-performance distributed caching system with consistent hashing.
@@ -314,10 +321,10 @@
               View Code
             </a>
           </div>
-        </div>
+        </article>
 
         <!-- Small Project - Postman Clone -->
-        <div class="project-card">
+        <article class="project-card">
           <h3 class="project-title">Postman Clone</h3>
           <p class="project-description">
             REST API testing tool with request builder and response viewer.
@@ -344,10 +351,10 @@
               View Code
             </a>
           </div>
-        </div>
+        </article>
 
         <!-- Small Project - Sitemap Builder -->
-        <div class="project-card">
+        <article class="project-card">
           <h3 class="project-title">Sitemap Builder</h3>
           <p class="project-description">
             Automated sitemap generator that crawls websites and creates XML
@@ -374,12 +381,13 @@
               View Code
             </a>
           </div>
-        </div>
+        </article>
       </div>
 
       <!-- Additional Projects Grid -->
       <div class="project-grid"></div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>

@@ -1,25 +1,31 @@
 // Mobile menu functionality
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
+const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+const navLinks = document.querySelector(".nav-links");
 
-mobileMenuBtn.addEventListener('click', function() {
-  this.classList.toggle('active');
-  navLinks.classList.toggle('active');
+mobileMenuBtn.addEventListener("click", function () {
+  this.classList.toggle("active");
+  navLinks.classList.toggle("active");
+
+  // Update aria-expanded attribute for accessibility
+  const isExpanded = this.classList.contains("active");
+  this.setAttribute("aria-expanded", isExpanded);
 });
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', function() {
-    mobileMenuBtn.classList.remove('active');
-    navLinks.classList.remove('active');
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", function () {
+    mobileMenuBtn.classList.remove("active");
+    navLinks.classList.remove("active");
+    mobileMenuBtn.setAttribute("aria-expanded", "false");
   });
 });
 
 // Close mobile menu when clicking outside
-document.addEventListener('click', function(e) {
+document.addEventListener("click", function (e) {
   if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
-    mobileMenuBtn.classList.remove('active');
-    navLinks.classList.remove('active');
+    mobileMenuBtn.classList.remove("active");
+    navLinks.classList.remove("active");
+    mobileMenuBtn.setAttribute("aria-expanded", "false");
   }
 });
 
@@ -62,8 +68,12 @@ projectCards.forEach((card) => {
 
 filterTabs.forEach((tab) => {
   tab.addEventListener("click", function () {
-    filterTabs.forEach((t) => t.classList.remove("active"));
+    filterTabs.forEach((t) => {
+      t.classList.remove("active");
+      t.setAttribute("aria-selected", "false");
+    });
     this.classList.add("active");
+    this.setAttribute("aria-selected", "true");
 
     const filter = this.textContent.toLowerCase().replace(" ", "");
 
@@ -140,3 +150,4 @@ document.querySelectorAll(".project-card").forEach((card) => {
   card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
   observer.observe(card);
 });
+

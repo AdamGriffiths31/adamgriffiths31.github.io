@@ -27,8 +27,8 @@ body {
   overflow-x: hidden;
 }
 
-/* Navigation */
-nav {
+/* Header & Navigation */
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -55,6 +55,11 @@ nav {
   gap: 2rem;
   align-items: center;
   margin-left: auto;
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline;
 }
 
 .nav-links a {
@@ -100,6 +105,11 @@ nav {
 
 .mobile-menu-btn.active span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Main Content */
+main {
+  width: 100%;
 }
 
 /* Hero Section */
@@ -148,6 +158,7 @@ nav {
     var(--text-secondary) 100%
   );
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -235,12 +246,14 @@ section h1 {
 
 .filter-tab {
   background: var(--bg-secondary);
+  color: var(--text-secondary);
   border: 1px solid var(--border);
   padding: 0.5rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.875rem;
+  font-family: inherit;
 }
 
 .filter-tab:hover {
@@ -404,7 +417,12 @@ footer {
     visibility: visible;
   }
   
+  .nav-links li {
+    width: 100%;
+  }
+  
   .nav-links a {
+    display: block;
     padding: 1rem 0;
     border-bottom: 1px solid var(--border);
     font-size: 1rem;
