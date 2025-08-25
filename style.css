@@ -20,7 +20,7 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -383,13 +383,16 @@ footer {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .project-card.featured {
+  
+  .project-card.featured,
+  .project-card.large {
     grid-column: span 2;
     grid-row: span 1;
   }
 }
 
 @media (max-width: 640px) {
+  /* Mobile Navigation */
   .mobile-menu-btn {
     display: flex;
   }
@@ -428,17 +431,23 @@ footer {
     font-size: 1rem;
   }
   
-  .nav-links a:last-child {
+  .nav-links li:last-child a {
     border-bottom: none;
   }
   
+  /* Grid Layout */
   .bento-grid {
     grid-template-columns: 1fr;
   }
+  
   .project-card.featured,
-  .project-card.large {
+  .project-card.large,
+  .project-card.full-width {
     grid-column: span 1;
+    grid-row: span 1;
   }
+  
+  /* Typography */
   .hero h1 {
     font-size: 2rem;
   }

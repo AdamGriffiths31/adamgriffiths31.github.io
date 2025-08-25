@@ -75,7 +75,7 @@ filterTabs.forEach((tab) => {
     this.classList.add("active");
     this.setAttribute("aria-selected", "true");
 
-    const filter = this.textContent.toLowerCase().replace(" ", "");
+    const filter = this.textContent.toLowerCase().replace(/\s+/g, "");
 
     projectCards.forEach((card) => {
       if (filter === "all") {
@@ -150,4 +150,3 @@ document.querySelectorAll(".project-card").forEach((card) => {
   card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
   observer.observe(card);
 });
-
